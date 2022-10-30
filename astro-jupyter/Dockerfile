@@ -9,6 +9,7 @@ RUN apt-get -yqq update \
       make \
       libhdf5-dev \
   && apt-get clean
-RUN pip install astropy h5py scipy matplotlib jupyterlab
+RUN pip install --upgrade pip
+RUN pip install astropy h5py scipy matplotlib jupyterlab ipywidgets
 EXPOSE 8888
 ENTRYPOINT [ "jupyter-lab", "--no-browser", "--allow-root"]
